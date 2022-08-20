@@ -5,7 +5,7 @@ from event_loop import *
 class SoundLevelPoller(Poller):
   """ Poll for the absolute volume on the default microphone """
   def setup(self):
-    self.stream = sd.InputStream(samplerate=12000, blocksize=1)
+    self.stream = sd.InputStream(samplerate=12000, blocksize=1, device=2)
     self.stream.start()
 
   def poll(self):
